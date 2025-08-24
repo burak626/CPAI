@@ -1,0 +1,271 @@
+{
+  "name": "CPAI",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Hi there! How can I help you today!",
+        "options": {
+          "inputPlaceholder": "Type here...",
+          "subtitle": "Career Path AI",
+          "title": "CPAI",
+          "customCss": ":root {\n  font-size: 78%;\n  \n  /* Colors */\n  --chat--color-primary: #000000;\n  --chat--color-primary-shade-50: #333333;\n  --chat--color-primary-shade-100: #666666;\n  --chat--color-secondary: #ffffff;\n  --chat--color-secondary-shade-50: #f2f2f2;\n  --chat--color-white: #ffffff;\n  --chat--color-light: #f2f2f2;\n  --chat--color-light-shade-50: #e6e6e6;\n  --chat--color-light-shade-100: #cccccc;\n  --chat--color-medium: #999999;\n  --chat--color-dark: #000000;\n  --chat--color-disabled: #777777;\n  --chat--color-typing: #444444;\n\n  /* Base Layout */\n  --chat--spacing: 1rem;\n  --chat--border-radius: 0.25rem;\n  --chat--transition-duration: 0.15s;\n  --chat--font-family: (\n    -apple-system,\n    BlinkMacSystemFont,\n    'Segoe UI',\n    Roboto,\n    Oxygen-Sans,\n    Ubuntu,\n    Cantarell,\n    'Helvetica Neue',\n    sans-serif\n  );\n\n  /* Window Dimensions */\n  --chat--window--width: 400px;\n  --chat--window--height: 600px;\n  --chat--window--bottom: var(--chat--spacing);\n  --chat--window--right: var(--chat--spacing);\n  --chat--window--z-index: 9999;\n  --chat--window--border: 1px solid var(--chat--color-light-shade-50);\n  --chat--window--border-radius: var(--chat--border-radius);\n  --chat--window--margin-bottom: var(--chat--spacing);\n\n  /* Header Styles */\n  --chat--header-height: auto;\n  --chat--header--padding: var(--chat--spacing);\n  --chat--header--background: var(--chat--color-dark);\n  --chat--header--color: var(--chat--color-light);\n  --chat--header--border-top: none;\n  --chat--header--border-bottom: none;\n  --chat--header--border-left: none;\n  --chat--header--border-right: none;\n  --chat--heading--font-size: 2em;\n  --chat--subtitle--font-size: inherit;\n  --chat--subtitle--line-height: 0.001;\n\n  /* Message Styles */\n  --chat--message--font-size: 1rem;\n  --chat--message--padding: var(--chat--spacing);\n  --chat--message--border-radius: var(--chat--border-radius);\n  --chat--message-line-height: 1.5;\n  --chat--message--margin-bottom: calc(var(--chat--spacing) * 1);\n  --chat--message--bot--background: var(--chat--color-white);\n  --chat--message--bot--color: var(--chat--color-dark);\n  --chat--message--bot--border: none;\n  --chat--message--user--background: var(--chat--color-primary);\n  --chat--message--user--color: var(--chat--color-white);\n  --chat--message--user--border: none;\n  --chat--message--pre--background: rgba(0, 0, 0, 0.05);\n  --chat--messages-list--padding: var(--chat--spacing);\n\n  /* Toggle Button */\n  --chat--toggle--size: 64px;\n  --chat--toggle--width: var(--chat--toggle--size);\n  --chat--toggle--height: var(--chat--toggle--size);\n  --chat--toggle--border-radius: 50%;\n  --chat--toggle--background: var(--chat--color-primary);\n  --chat--toggle--hover--background: var(--chat--color-primary-shade-50);\n  --chat--toggle--active--background: var(--chat--color-primary-shade-100);\n  --chat--toggle--color: var(--chat--color-white);\n\n  /* Input Area */\n  --chat--textarea--height: 50px;\n  --chat--textarea--max-height: 30rem;\n  --chat--input--font-size: inherit;\n  --chat--input--border: 0;\n  --chat--input--border-radius: 0;\n  --chat--input--padding: 0.8rem;\n  --chat--input--background: var(--chat--color-white);\n  --chat--input--text-color: initial;\n  --chat--input--line-height: 1.5;\n  --chat--input--placeholder--font-size: var(--chat--input--font-size);\n  --chat--input--border-active: 0;\n  --chat--input--left--panel--width: 2rem;\n\n  /* Button Styles */\n  --chat--button--color: var(--chat--color-light);\n  --chat--button--background: var(--chat--color-primary);\n  --chat--button--padding: calc(var(--chat--spacing) * 1 / 2) var(--chat--spacing);\n  --chat--button--border-radius: var(--chat--border-radius);\n  --chat--button--hover--color: var(--chat--color-light);\n  --chat--button--hover--background: var(--chat--color-primary-shade-50);\n  --chat--close--button--color-hover: var(--chat--color-primary);\n\n  /* Send and File Buttons */\n  --chat--input--send--button--background: var(--chat--color-white);\n  --chat--input--send--button--color: var(--chat--color-light);\n  --chat--input--send--button--background-hover: var(--chat--color-primary-shade-50);\n  --chat--input--send--button--color-hover: var(--chat--color-secondary-shade-50);\n  --chat--input--file--button--background: var(--chat--color-white);\n  --chat--input--file--button--color: var(--chat--color-secondary);\n  --chat--input--file--button--background-hover: var(--chat--input--file--button--background);\n  --chat--input--file--button--color-hover: var(--chat--color-secondary-shade-50);\n  --chat--files-spacing: 0.25rem;\n\n  /* Body and Footer */\n  --chat--body--background: var(--chat--color-light);\n  --chat--footer--background: var(--chat--color-light);\n  --chat--footer--color: var(--chat--color-dark);\n}\n\n/* You can override any class styles, too. Right-click inspect in Chat UI to find class to override. */\n.chat-message {\n  max-width: 90%;\n}\n\n:root {\n  /* Increase input font size and text area height */\n  --chat--input--font-size: 1.5rem;\n  --chat--textarea--height: 60px;\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "aa426abc-9121-4cca-9272-34cbef557ade",
+      "name": "When chat message received",
+      "webhookId": "9261a96d-208a-46db-971a-835819053175",
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "# CPAI (Career Path AI) System Prompt\n\nYou are CPAI (Career Path AI), an advanced AI career counselor specializing in the artificial intelligence job market. Your primary purpose is to help users navigate their career paths in the rapidly evolving AI industry by providing data-driven insights, personalized advice, and practical guidance.\n\n## Core Knowledge Base\n\nYou have access to comprehensive AI job market data from March 2025, including:\n\n1. **Market Distribution**: Detailed breakdown of employer types (startups, SMBs, agencies, enterprise) and their respective hiring percentages.\n\n2. **Tool & Technology Demand**: Growth percentages across 15+ categories including programming languages, AI/ML frameworks, LLMs, image/video generation, voice tools, automation, agent frameworks, databases, and cloud services.\n\n3. **Job Competition Analysis**: Data on competitive vs. niche job categories with median hourly rates and typical number of applicants.\n\n4. **Specialized Application Demand**: Breakdowns of how AI is applied across various business functions (voice agents, image generation, RAG implementations, etc.)\n\n5. **Industry-Specific Insights**: Specialized AI applications, budgets, and tools across healthcare, finance, e-commerce, and marketing.\n\n6. **Regional Variations**: Geographic differences in tool preferences and in-demand skills across North America, Europe, and Asia.\n\n7. **Project Timelines & Budgets**: Realistic expectations vs. client expectations for various AI project types.\n\n## Response Guidelines\n\n### For Career Path Questions\n- Provide personalized guidance based on the user's experience level, interests, and goals\n- Reference specific high-growth tools (with exact growth percentages) relevant to their situation\n- Compare competitive vs. niche fields that align with their skills\n- Recommend specific skill development paths with prioritized learning objectives\n\n### For Market Research Questions\n- Cite precise statistics from your knowledge base\n- Contextualize data with practical implications\n- Highlight regional variations when relevant\n- Identify emerging trends and growing opportunities\n\n### For Freelance/Contractor Questions\n- Provide realistic budget and timeline expectations\n- Suggest appropriate rate structures based on competition level\n- Recommend specialized niches with lower competition and higher rates\n- Offer insights on client expectations vs. realistic planning\n\n### For Hiring/Recruiting Questions\n- Detail competitive compensation structures for specific skill sets\n- Outline typical qualification expectations for various roles\n- Recommend tool proficiencies that offer competitive advantages\n- Provide insights on regional talent availability\n\n## Tone and Style\n\n- **Professional yet approachable**: Balance data-driven insights with conversational, encouraging language\n- **Precise**: Use exact statistics and growth percentages when providing market data\n- **Forward-looking**: Emphasize growing and emerging trends rather than established ones\n- **Solution-oriented**: Always provide actionable next steps tailored to the user's situation\n- **Balanced**: Present both opportunities and challenges honestly\n\n## Limitations and Boundaries\n\n- Acknowledge when questions fall outside your March 2025 knowledge base\n- Do not provide general career advice unrelated to AI/ML fields\n- When discussing salary expectations or rates, provide ranges rather than specific figures\n- Avoid making absolute predictions about future market conditions\n- Make it clear when you're offering opinions vs. data-backed insights\n\n## Sample Responses (Keep your answers short)\n\n### For a beginner asking about entering the field:\n\"Based on the March 2025 data, I'd recommend focusing on Python (83.7% growth) and RAG implementation skills (41.3% growth) as your entry point. The AI content generation category receives 15-18 proposals per job with a median rate of $28/hr, making it accessible for newcomers while offering decent compensation. Consider starting with e-commerce applications, where AI product visualization shows 34.7% demand within the image generation category.\"\n\n### For an experienced developer seeking specialization:\n\"Given your background in web development, specializing in enterprise AI security would leverage your existing skills while entering a less competitive field (only 6-9 proposals per job) with significantly higher compensation (median $75/hr). The March 2025 data shows AWS skills have 47.3% growth, and when combined with compliance knowledge (particularly high in Europe at 47.6% demand growth), you'd be positioning yourself at the intersection of two high-value skill sets.\"\n\n## Special Features\n\n- **Skill Gap Analysis**: Identify missing skills based on user's experience and target role\n- **Market Opportunity Identification**: Highlight underserved niches with high demand/low competition\n- **Technology Growth Comparison**: Compare growth trajectories across similar technologies\n- **Regional Opportunity Assessment**: Recommend regions based on user's skill set and preferences\n- **Timeline and Budget Reality Checks**: Help freelancers and agencies set realistic client expectations"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        320,
+        0
+      ],
+      "id": "818dfa7a-0780-42e4-ac0a-a0602b629ff5",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        420,
+        140
+      ],
+      "id": "61bc8e43-1561-4c29-b1d1-0b109ad28e2e",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "name": "database",
+        "description": "Call this tool to get the information about CPAI_Data to answer the user's questions."
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        560,
+        200
+      ],
+      "id": "fc9a44e1-d13b-4d6b-a499-e6e7e9309fde",
+      "name": "Answer questions with a vector store"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-3.5-turbo",
+          "mode": "list",
+          "cachedResultName": "gpt-3.5-turbo"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        740,
+        360
+      ],
+      "id": "e3cb9d9b-f11e-4556-bc8e-30648fbb34a3",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "VoHMb7O55rqzXqOK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "cpai",
+          "mode": "list",
+          "cachedResultName": "cpai"
+        },
+        "options": {
+          "pineconeNamespace": "CPAI"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.1,
+      "position": [
+        420,
+        360
+      ],
+      "id": "672d1f8f-fea9-4c14-8122-5be41b92be7c",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "jReEYXLVEceEHBz3",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        460,
+        480
+      ],
+      "id": "81d75ffc-3ddf-458d-b233-346a2a14f9bb",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "VoHMb7O55rqzXqOK",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-20b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        280,
+        140
+      ],
+      "id": "ee04c2d7-f177-40d7-a50c-881615207285",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "zROJoJKSe1SuqoAX",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        840,
+        200
+      ],
+      "id": "c8e7b844-d12b-4fe4-a05c-cc515eeaf634",
+      "name": "Calculator"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer questions with a vector store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "162bc8fa-6544-4751-b3de-0b8297cf5c41",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "4a2952d750233c02800975f682ffd82d00294fb62c8e98c152bd79f86550ccf2"
+  },
+  "id": "RP4VoLLEl52gdcux",
+  "tags": []
+}
